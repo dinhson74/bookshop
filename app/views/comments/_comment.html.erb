@@ -1,0 +1,15 @@
+<div class='comment'>
+  <strong>
+    <%= comment.user&.name %>
+  </strong>
+
+  <p>
+    <%= comment.content %>
+  </p>
+
+  <p>
+    <%= link_to I18n.t('shop.book.comment.destroy_comment'), [comment.book, comment],
+                method: :delete,
+                data: { confirm: I18n.t('common.are_you_sure')} %>
+  </p>
+</div>

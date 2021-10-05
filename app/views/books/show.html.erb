@@ -1,0 +1,18 @@
+<div class='list-book'>
+  <div class='image-book'>
+    <%= image_tag @book.image_url.to_s %>
+  </div>
+  <div class='details-book'>
+    <b><%= @book.name %></b>
+    <p><%= @book.description %></p>
+    <b><%= I18n.t('shop.book.price') %> : <%= @book.price %></b></br>
+    <b><%= I18n.t('shop.book.publisher') %> : <%= @book.publisher %></b></br>
+    <b><%= I18n.t('shop.book.category') %> : <%= @book.category.name %></b></br>
+    <%= link_to I18n.t('common.back'), books_path ,class: 'btn btn-primary'%>
+  </div>
+</div>
+<div class="comment">
+  <h2><%= I18n.t('shop.book.comments') %></h2>
+<%= render @book.comments %>                  
+</div>
+<%= render 'comments/form' %>

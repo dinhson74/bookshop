@@ -1,0 +1,40 @@
+<div class="input-group mb-3">
+  <%= search_form_for [:admin, @q] do |f| %>
+    <%= f.search_field :name_or_publisher_cont, placeholder: I18n.t('admin.common.search'), class: 'form-control' %>
+    <%= f.submit I18n.t('admin.common.search'), class: 'btn btn-primary' %>
+  <% end %>
+
+  <div>
+    <%= I18n.t('admin.common.sort_by') %>: 
+    <%= sort_link(@q, :name,I18n.t('admin.managament.book.name'), default_order: :asc) %>
+    <%= sort_link(@q, :price,I18n.t('admin.managament.book.price'), default_order: :asc) %>
+    <%= sort_link(@q, :admin, I18n.t('admin.managament.book.publisher'), default_order: :asc) %>
+  </div>
+</div>
+<table class='table table-bordered border-primary'>
+  <thead>
+    <tr>
+      <th scope='col'><%= I18n.t('admin.managament.book.name') %></th>
+      <th scope='col'><%= I18n.t('admin.managament.book.description') %></th>
+      <th scope='col'><%= I18n.t('admin.managament.book.price') %></th>
+      <th scope='col'><%= I18n.t('admin.managament.book.publisher') %></th>
+      <th scope='col'><%= I18n.t('admin.managament.book.image') %></th>
+      <th scope='col'>category_id</th>
+      <th scope='col'>creator_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @books %>
+  </tbody>
+</table>
+<div class='actions'>
+  <%= link_to I18n.t('common.create'), new_admin_book_path, class: 'btn btn-primary' %>
+  <%= link_to I18n.t('common.download_csv'), admin_books_path(format: 'csv'), class: 'btn btn-primary' %>
+</div>
+<div>
+  <h4><%= I18n.t('common.import_data') %></h4>
+  <%= form_tag import_admin_books_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag I18n.t('common.import'), class: 'btn btn-primary' %>
+  <% end %>
+</div>

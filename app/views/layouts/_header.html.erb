@@ -1,0 +1,30 @@
+<header class='navbar navbar-fixed-top navbar-inverse'>
+  <div class='container'>
+    <%= link_to I18n.t('common.sitename'), root_path,id: 'logo'%>
+    <nav>
+     <ul class='nav navbar-nav navbar-right'>
+        <li><%= link_to I18n.t('common.home'), root_path %></li>
+        <li><%= link_to I18n.t('common.shop'), books_path %></li>
+        <li><%= link_to I18n.t('common.language.english'), locale:'en' %></li>
+        <li><%= link_to I18n.t('common.language.vietnamese'), locale:'vi' %></li>
+       <% if user_signed_in? %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= I18n.t('user.account') %> <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to I18n.t('user.profile'), user_path(current_user) %></li>
+              <li><%= link_to I18n.t('user.settings'), edit_user_registration_path %></li>
+              <li class='divider'></li>
+              <li>
+                <%= link_to I18n.t('user.logout'), destroy_user_session_path, method: 'delete' %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to I18n.t('user.log_in'), new_user_session_path %></li>
+        <% end %>
+     </ul>
+    </nav>
+  </div>
+</header>

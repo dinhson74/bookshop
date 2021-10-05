@@ -1,0 +1,14 @@
+<h1><%= I18n.t('admin.managament.category.create_category')%></h1>
+
+<div class='row'>
+  <div class='col-md-6 col-md-offset-2'>
+    <%= form_with(model: [:admin, @category ], local: true) do |f| %>
+      <%= render 'devise/shared/error_messages_category' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.submit I18n.t('common.create'), class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

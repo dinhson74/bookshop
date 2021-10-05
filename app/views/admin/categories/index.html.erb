@@ -1,0 +1,33 @@
+<div class="input-group mb-3">
+  <%= search_form_for [:admin, @q] do |f| %>
+    <%= f.search_field :name_cont, placeholder: I18n.t('admin.common.search'), class: 'form-control' %>
+    <%= f.submit I18n.t('admin.common.search'), class: 'btn btn-primary' %>
+  <% end %>
+
+  <div>
+    <%= I18n.t('admin.common.sort_by') %>: 
+    <%= sort_link(@q, :name,I18n.t('admin.managament.category.name'), default_order: :asc) %>
+  </div>
+</div>
+<table class='table table-bordered border-primary'>
+  <thead>
+    <tr>
+      <th scope='col'><%= I18n.t('admin.managament.category.name') %></th>
+      <th scope='col'><%= I18n.t('admin.managament.category.action') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @categories %>
+  </tbody>
+</table>
+<div class='actions'>
+  <%= link_to I18n.t('common.create'), new_admin_category_path, class: 'btn btn-primary' %>
+  <%= link_to I18n.t('common.download_csv'), admin_categories_path(format: 'csv'), class: 'btn btn-primary' %>
+</div>
+<div>
+  <h4><%= I18n.t('common.import_data') %></h4>
+  <%= form_tag import_admin_categories_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag I18n.t('common.import'), class: 'btn btn-primary' %>
+  <% end %>
+</div>

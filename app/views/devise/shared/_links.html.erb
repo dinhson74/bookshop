@@ -1,0 +1,11 @@
+<%- if controller_name != 'sessions' %>
+  <%= link_to I18n.t('user.log_in'), new_session_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to I18n.t('user.sign_up'), new_registration_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to I18n.t('user.not_receive_confirmation'), new_confirmation_path(resource_name) %><br />
+<% end %>

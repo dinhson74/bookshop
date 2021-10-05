@@ -1,0 +1,13 @@
+<tr>
+  <td scope='row'><%= book.name %></td>
+  <td scope='row'><%= book.description %></td>
+  <td scope='row'><%= book.price %></td>
+  <td scope='row'><%= book.publisher %></td>
+  <td scope='row'><%= image_tag book.image_url.to_s %> </td>
+  <td scope='row'><%= book.category_id %></td>
+  <td scope='row'><%= book.creator_id %></td>
+  <td scope='row'>
+    <%= link_to I18n.t('common.update'), edit_admin_book_path(book), class: 'btn btn-primary' %>
+    <%= link_to I18n.t('common.destroy'), admin_book_path(book), class: 'btn btn-primary', method: :delete, data: {confirm: I18n.t('common.are_you_sure') } %>
+  </td>
+</tr>

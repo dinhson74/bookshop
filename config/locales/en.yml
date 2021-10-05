@@ -1,0 +1,121 @@
+en:
+  common:
+    sitename: "Bookshop"
+    dashboard: "Dashboard"
+    language:
+      english: "English"
+      vietnamese: "Vietnamese"
+    home: "Home"
+    shop: "Shop"
+    about: "About"
+    contact: "Contact"
+    edit: "Edit"
+    create: "Create"
+    update: "Update"
+    destroy: "Destroy"
+    back: "Back"
+    are_you_sure: "Are you sure ?"
+    download_csv: "Download csv"
+    import_data: "Import data"
+    import: "Import"
+    data_imported: "Data imported"
+  user:
+    log_in: "Log in"
+    logout: "Logout"
+    sign_up: "Sign up"
+    not_receive_confirmation: "Did not receive confirmation instructions?"
+    account: "Acount"
+    settings: "Settings"
+    profile: "Profile"
+    characters_minimum: "characters minimum"
+    confirm_account: "Confirm account"
+    errors:
+      messages:
+        you_are_not_an_admin: "You are not an admin"
+  admin:
+    user_management: "User management"
+    category_management: "Category management"
+    book_management: "Book management"
+    bookshop_management_page: "Bookshop management page"
+    managament:
+      user:
+        name: "Name"
+        emai: "Email"
+        address: "Address"
+        phone: "Phone"
+        birthday: "Birthday"
+        admin: "Admin"
+        action: "Action"
+        create_user: "Create user"
+        update_user: "Update user"
+        profile_updated: "Profile updated"
+        create_success: "Create success"
+        save_changes: "Save changes"
+        user_deleted: "User was deleted"
+      category:
+        name: "Name"
+        action: "Action"
+        create_category: "Create category"
+        create_success: "Create success"
+        update_category: "Update category"
+        category_updated: "Category updated "
+        save_changes: "Save changes"
+        category_deleted: "Category was deleted"
+      book:
+        name: "Name"
+        description: "Description"
+        price: "Price"
+        publisher: "Publisher"
+        image: "Image"
+        create_book: "Create book"
+        create_success: "Create success"
+        book_updated: "Book updated"
+        update_book: "Update book"
+        save_changes: "Save changes"
+        book_deleted: "Book was deleted"
+      csv:
+        errors:
+          not_csv: "Not CSV file uploaded!"
+    common:
+      search: "Search"
+      sort_by: "Sort by"
+  home:
+    sign_up_now!: "Sign up now!"
+    welcome_to_the_bookshop: "Welcome to the Bookshop"
+  shop:
+    book:
+      price: "Price"
+      publisher: "Publisher"
+      category: "Category"
+      all_books: "All books"
+      search_by_name_book: "Search by name book"
+      sort_by: "Sort by"
+      name: "Name"
+      search: "Search"
+      comments: "Comments"
+      add_comment: "Add comment"
+      create_comment: "Create comment"
+      comment:
+        destroy_comment: "Destroy comment"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              not_found: "Not found"
+            phone:
+              invalid_phone: "only positive number without spaces are allowed"
+            birthday:
+              invalid_birthday: "invalid. Please enter a valid date of birth"
+  errors:
+    messages:
+      already_confirmed: "was already confirmed, please try signing in"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
+  send_email_confirm: "Send email confirm"
+  welcome: "Welcome"

@@ -1,0 +1,126 @@
+vi:
+  common:
+    sitename: "Bookshop"
+    dashboard: "Dashboard"
+    language:
+      english: "Tiếng anh"
+      vietnamese: "Tiếng việt"
+    home: "Trang chủ"
+    shop: "Cửa hàng"
+    about: "Về  chúng tôi"
+    contact: "Liên hệ"
+    edit: "Chỉnh sửa"
+    create: "Tạo mới"
+    update: "Cập nhật"
+    destroy: "Xóa"
+    back: "Trở lại"
+    are_you_sure: "Bạn có chắc không ?"
+    download_csv: "Tải xuống csv"
+    import_data: "Nhập dữ liệu"
+    import: "Nhập"
+    data_imported: "Dữ liệu đã được nhập"
+  user:
+    log_in: "Đăng nhập"
+    logout: "Đăng xuất"
+    sign_up: "Đăng ký"
+    not_receive_confirmation: "Không nhận được hướng dẫn xác nhận?"
+    account: "Tài khoản"
+    settings: "Cài đặt"
+    profile: "Thông tin cá nhân"
+    characters_minimum: "ký tự tối thiểu"
+    confirm_account: "Xác nhận tài khoản"
+    errors:
+      messages:
+        you_are_not_an_admin: "Bạn không phải là quản trị viên"
+  admin:
+    user_management: "Quản lý người dùng"
+    category_management: "Quản lý thể loại"
+    book_management: "Quản lý sách"
+    bookshop_management_page: "Trang quản lý bookshop"
+    managament:
+      user:
+        name: "Tên"
+        emai: "Email"
+        address: "Địa chỉ"
+        phone: "Số điện thoại"
+        birthday: "Ngày sinh"
+        admin: "Admin"
+        action: "Hành động"
+        update_user: "Cập nhật người dùng"
+        create_user: "Tạo người dùng"
+        profile_updated: "Hồ sơ cá nhân đã cập nhật"
+        create_success: "Tạo thành công"
+        save_changes: "Lưu thay đổi"
+        user_deleted: "Người dùng đã bị xóa"
+      category:
+        name: "Tên"
+        action: "Hành động"
+        create_category: "Tạo thể loại"
+        create_success: "Tạo thành công"
+        update_category: "Cập nhật thể loại"
+        save_changes: "Lưu thay đổi"
+        category_updated: "Thể loại đã được cập nhật"
+        category_deleted: "Thể loại đã được xóa"
+      book:
+        name: "Tên"
+        description: "Mô tả"
+        price: "Giá"
+        publisher: "Tác giả"
+        image: "Hình ảnh"
+        create_book: "Tạo sách"
+        create_success: Tạo thành công
+        update_book: "Cập nhật sách"
+        book_updated: "Sách đã được cập nhật"
+        save_changes: "Lưu thay đổi"
+        book_deleted: "Sách đã được xóa"
+      csv:
+        errors:
+          not_csv: "Không phải tệp CSV được tải lên!"
+    common:
+      search: "Tìm kiếm"
+      sort_by: "Sắp xếp theo"
+  home:
+    sign_up_now!: "Đăng ký ngay!"
+    welcome_to_the_bookshop: "Chào mừng bạn đến với cửa hàng sách"
+  shop:
+    book:
+      price: "Giá"
+      publisher: "Tác giả"
+      category: "Thể loại"
+      all_books: "Tất cả sách"
+      search_by_name_book: "Tìm kiếm theo tên sách"
+      search: "Tìm kiếm"
+      sort_by: "Sắp xếp theo"
+      name: "Tên"
+      comments: "Bình luận"
+      add_comment: "Thêm bình luận"
+      create_comment: "Tạo bình luận"
+      comment:
+        destroy_comment: "Xóa bình luận"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              not_found: "không tìm thấy"
+            phone:
+              invalid_phone: "Chỉ cho phép số dương không có khoảng trắng"
+            birthday:
+              invalid_birthday: "không hợp lệ. Vui lòng nhập ngày sinh hợp lệ"
+        book:
+          attributes:
+            category:
+              required: "phải tồn tại"
+  errors:
+    messages:
+      already_confirmed: "Đã được xác nhận, vui lòng thử đăng nhập"
+      confirmation_period_expired: "cần được xác nhận trong %{period}, vui lòng yêu cầu một cái mới"
+      expired: "đã hết hạn, vui lòng yêu cầu một cái mới"
+      not_found: "không tìm thấy"
+      not_saved:
+        one: "1 lỗi không thể tạo %{resource} này:"
+        other: "%{count} lỗi không thể tạo %{resource} này:"
+      extension_whitelist_error: "Bạn không được phép tải lên tệp, các loại được phép: jpg, jpeg, gif, png"
+  send_email_confirm: "Gửi email xác nhận"
+  welcome: "Chào mừng"

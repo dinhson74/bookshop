@@ -1,0 +1,35 @@
+<h1><%= I18n.t('admin.managament.user.create_user')%></h1>
+
+<div class='row'>
+  <div class='col-md-6 col-md-offset-2'>
+    <%= form_with(model: [:admin, @user ], local: true) do |f| %>
+      <%= render 'devise/shared/error_messages_user' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control' %>
+
+      <%= f.label :phone %>
+      <%= f.text_field :phone, class: 'form-control' %>
+
+      <%= f.label :admin %>
+      <%= f.select :admin, ['true', 'false']%>
+
+      <%= f.label :birthday %>
+      <%= f.date_field :birthday, class: 'form-control' %>
+      
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation, 'Confirmation' %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit I18n.t('common.create'), class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

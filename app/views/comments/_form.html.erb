@@ -1,0 +1,12 @@
+<div class='comment'>
+  <h2> <%= I18n.t('shop.book.add_comment')%> </h2></h2>
+  <%= form_with model: [ @book, @book.comments.build ] do |form| %>
+    <p>
+      <%= form.label :content %><br>
+      <%= form.text_field :content %>
+    </p>
+    <p>
+      <%= form.submit I18n.t('shop.book.create_comment'), class: 'btn btn-primary' %>
+    </p>
+  <% end %>
+</div>

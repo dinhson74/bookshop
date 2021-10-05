@@ -1,0 +1,29 @@
+<h1><%= I18n.t('shop.book.all_books') %></h1>
+
+<h3><%= I18n.t('shop.book.search_by_name_book') %></h3>
+
+<%= search_form_for @q do |f| %>
+    <%= f.search_field :name_cont, placeholder: I18n.t('shop.book.search') %>
+    <%= f.submit I18n.t('shop.book.search'), class: 'btn btn-primary' %>
+<% end %>
+
+<div class = 'sort-book'><%= I18n.t('shop.book.sort_by') %>: 
+  <%= sort_link(@q, :name,I18n.t('shop.book.name'), default_order: :asc) %>
+  <%= sort_link(@q, :price, I18n.t('shop.book.price'), default_order: :asc) %>
+  <%= sort_link(@q, :category_id, I18n.t('shop.book.category'), default_order: :desc) %>
+</div>
+
+<div class='list-book'>
+  <% @books.each do |book|%>
+    <div class='image-book'>
+      <%= image_tag book.image_url.to_s %>
+    </div>
+    <div class='details-book'>
+      <b><%= link_to book.name, book %></b>
+      <p><%= book.description %></p>
+      <b><%= I18n.t('shop.book.price') %> : <%= book.price %></b></br>
+      <b><%= I18n.t('shop.book.publisher') %> : <%= book.publisher %></b></br>
+      <b><%= I18n.t('shop.book.category') %> : <%= book.category.name %></b>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<tr>
+  <td scope='row'><%= category.name%></td>
+  <td scope='row'>
+    <%= link_to I18n.t('common.update'), edit_admin_category_path(category), class: 'btn btn-primary' %>
+    <%= link_to I18n.t('common.destroy'), admin_category_path(category), class: 'btn btn-primary', method: :delete, data: {confirm: I18n.t('common.are_you_sure') } %>
+  </td>
+</tr>

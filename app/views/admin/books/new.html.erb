@@ -1,0 +1,32 @@
+<h1><%= I18n.t('admin.managament.book.create_book')%></h1>
+
+<div class='row'>
+  <div class='col-md-6 col-md-offset-2'>
+    <%= form_with(model: [:admin, @book ], local: true) do |f| %>
+      <%= render 'devise/shared/error_messages_book' %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description, class: 'form-control' %>
+      
+      <%= f.label :price %>
+      <%= f.text_field :price, class: 'form-control' %>
+
+      <%= f.label :publisher %>
+      <%= f.text_field :publisher, class: 'form-control' %>
+
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+
+      <%= f.label :category_id %>
+      <%= f.select :category_id, options_for_select(load_categories), prompt: "" %>
+
+      <%= f.label :creator_id %>
+      <%= f.text_field :creator_id, class: 'form-control', value: current_user.try(:id),:readonly => true %>
+
+      <%= f.submit I18n.t('common.create'), class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
